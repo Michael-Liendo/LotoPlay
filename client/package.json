@@ -9,7 +9,12 @@
     "preview": "vite preview",
     "test.e2e": "cypress run",
     "test.unit": "vitest",
-    "lint": "eslint"
+    "lint": "eslint",
+
+    "android:open": "cap open android",
+    "android:run": "cap run android",
+    "android:build": "cap build android",
+    "android:sync": "cap sync android"
   },
   "dependencies": {
     "@capacitor/android": "^5.5.1",
