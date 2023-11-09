@@ -7,9 +7,13 @@
     "start": "node dist/server/src/index.js",
     "dev": "ts-node src/index.ts",
     "build": "tsc",
+    "knex:migrate:make": "knex migrate:make -x ts",
+    "migrations:up": "knex migrate:latest",
+    "migrations:down": "knex migrate:down",
     "lint": "biome format ./src && biome check ./src",
     "format": "biome format --write ./src && biome check --apply ./src",
     "format:unsafe": "biome format --write ./src && biome check --apply-unsafe ./src"
+
   },
   "repository": {
     "type": "git",
