@@ -29,6 +29,11 @@ export default async function register(request: FastifyRequest, reply: Reply) {
         return reply.code(400).send({ message: error.message });
       }
     }
-    return reply.code(500).send({ message: 'Internal server error' });
+    return reply
+      .code(500)
+      .send({
+        message: 'Internal server error',
+        error: error.message as string,
+      });
   }
 }

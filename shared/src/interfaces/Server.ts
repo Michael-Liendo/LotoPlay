@@ -11,5 +11,6 @@ export interface IReply {
   };
   500: {
     message: string;
+    error: string;
   };
 }
