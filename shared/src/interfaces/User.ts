@@ -1,8 +1,9 @@
-export interface IUser {
-  id: number;
-  name: string;
+export interface IUserForLogin {
   email: string;
   password: string;
-  createdAt: Date;
-  updatedAt: Date;
+}
+
+export interface ILoggedInUser {
+  token: string;
+  user: any;
 }
