@@ -2,10 +2,10 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "$shared/*": [
+      "$lib/shared/*": [
         "shared/src/*"
       ],
-      "$shared": [
+      "$lib/shared": [
         "shared/src/"
       ]
     }
