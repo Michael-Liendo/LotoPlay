@@ -1,5 +1,5 @@
 export interface IReply {
-  200: {
+  '2xx': {
     message: string;
     data: unknown;
   };

@@ -1,5 +1,6 @@
 import { User } from '../repository/User';
 import { hashPassword } from '../utils/password';
+import { CustomError } from '../utils/Error';
 
 import type { IUserForLogin, IUserForRegister } from '$lib/shared/interfaces';
 
@@ -15,19 +16,19 @@ export default class Auth {
     const user = await User.getUserByEmail(email);
 
     if (user) {
-      throw new Error('User already exists');
+      throw new CustomError(400, 'User already exists');
     }
 
     const hashedPassword = await hashPassword(password);
 
-    const newUser = {
+    const registeredUser = {
       first_name,
       last_name,
       email,
       password: hashedPassword,
     };
 
-    const id = await User.createUser(newUser);
+    const id = await User.createUser(registeredUser);
 
     return id;
   }

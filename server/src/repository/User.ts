@@ -1,8 +1,8 @@
-import { IUserForRegister } from '$lib/shared/interfaces';
+import { IUser, IUserForRegister } from '$lib/shared/interfaces';
 import database from './database';
 
 export class User {
-  static async getUserByEmail(email: string): Promise<string | null> {
+  static async getUserByEmail(email: string): Promise<IUser | null> {
     const user = await database('users').where({ email }).first();
     return user;
   }
