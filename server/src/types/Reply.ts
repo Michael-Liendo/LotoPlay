@@ -1,3 +1,4 @@
+import type { IncomingMessage, ServerResponse } from 'http';
 import type { IReply } from '$lib/shared/interfaces';
 import type {
   FastifyReply,
@@ -5,7 +6,6 @@ import type {
   FastifyTypeProviderDefault,
   RawServerDefault,
 } from 'fastify';
-import type { IncomingMessage, ServerResponse } from 'http';
 
 export type Reply = FastifyReply<
   RawServerDefault,
