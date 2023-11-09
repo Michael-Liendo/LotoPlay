@@ -1,16 +1,17 @@
-import type { FastifyInstance } from 'fastify';
+import auth from './auth';
+
+import type { FastifyInstance, RegisterOptions } from 'fastify';
 
 export default function routes(
   fastify: FastifyInstance,
-  _: unknown,
+  _: RegisterOptions,
   done: (err?: Error | undefined) => void,
 ) {
   fastify.get('/', async () => {
     return { hello: 'world' };
   });
 
-  // example for other routes
-  // fastify.register(auth, { prefix: "/auth" });
+  fastify.register(auth, { prefix: '/auth' });
 
   done();
 }

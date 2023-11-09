@@ -1,12 +1,14 @@
-import type { FastifyInstance, RouteOptions } from 'fastify';
+import { IReply } from '$lib/shared/interfaces';
+import login from '../../controllers/Auth/login';
+
+import type { FastifyInstance, RegisterOptions } from 'fastify';
 
 export default function auth(
   fastify: FastifyInstance,
-  _: RouteOptions,
-  done: (err?: Error) => void,
+  _: RegisterOptions,
+  done: (err?: Error | undefined) => void,
 ) {
-  // todo: add auth routes
-  // fastify.post('/login', loginControllers);
+  fastify.post<{ Reply: IReply }>('/login', login);
 
   done();
 }
