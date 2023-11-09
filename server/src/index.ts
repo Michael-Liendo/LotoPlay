@@ -1,37 +1,38 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 import Fastify from 'fastify';
+import database from './repository/database';
 
-import type { IUser } from '$lib/shared';
-
-const fastify = Fastify({
-  logger: true,
-});
+// Instantiate Fastify with some config
+const fastify = Fastify();
 
 // Declare a route
 fastify.get('/', async () => {
   return { hello: 'world' };
 });
 
-const user: IUser = {
-  id: 1,
-  name: 'John Doe',
-  email: '',
-  password: '',
-  createdAt: new Date(),
-  updatedAt: new Date(),
-};
-
-console.log(user);
-
-/**
- * Run the server!
- */
-const start = async () => {
-  try {
-    await fastify.listen({ port: 3000 });
-  } catch (err) {
-    fastify.log.error(err);
+// check database connection
+database
+  .raw('select 1')
+  .then(() =>
+    console.log(
+      '[DATABASE] Connection to database has been established successfully',
+    ),
+  )
+  .catch((error) => {
+    console.error('[DATABASE] Unable to connect to the database:', error);
     process.exit(1);
-  }
-};
+  });
 
-start();
+// Run the server!
+fastify.listen(
+  { port: Number(process.env.PORT) || 3000 },
+  function (err, address) {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+    console.log(`[SERVER] Server is now listening on ${address}`);
+  },
+);
