@@ -9,16 +9,16 @@ export interface ILoggedInUser {
 }
 
 export interface IUserForRegister {
-  name: string;
-  lastName: string;
+  first_name: string;
+  last_name: string;
   email: string;
   password: string;
 }
 
 export interface IUser {
   id: string;
-  name: string;
-  lastName: string;
+  first_name: string;
+  last_name: string;
   email: string;
   password?: string;
   createdAt: Date;
