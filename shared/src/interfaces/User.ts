@@ -1,8 +1,4 @@
-export interface IUser {
-  id: number;
-  name: string;
+export interface IUserForLogin {
   email: string;
   password: string;
-  createdAt: Date;
-  updatedAt: Date;
 }
