@@ -1,6 +1,6 @@
 import Fastify from 'fastify';
 
-import { IUser } from '$shared/index';
+import type { IUser } from '$lib/shared';
 
 const fastify = Fastify({
   logger: true,
