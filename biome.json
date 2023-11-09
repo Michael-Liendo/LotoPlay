@@ -8,7 +8,7 @@
     "rules": {
       "recommended": true,
       "correctness": { "noUnusedVariables": "warn" },
-      "complexity": { "noStaticOnlyClass":"off" }
+      "complexity": { "noStaticOnlyClass": "off" }
     }
   },
   "formatter": {
