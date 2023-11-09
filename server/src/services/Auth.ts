@@ -1,6 +1,6 @@
 import { User } from '../repository/User';
-import { hashPassword } from '../utils/password';
 import { CustomError } from '../utils/Error';
+import { hashPassword } from '../utils/password';
 
 import type { IUserForLogin, IUserForRegister } from '$lib/shared/interfaces';
 

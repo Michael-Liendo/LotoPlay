@@ -1,8 +1,8 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-import Fastify from 'fastify';
 import cors from '@fastify/cors';
+import Fastify from 'fastify';
 
 import database from './repository/database';
 import routes from './routes';

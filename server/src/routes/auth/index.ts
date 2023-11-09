@@ -1,5 +1,5 @@
-import register from '../../controllers/Auth/register';
 import login from '../../controllers/Auth/login';
+import register from '../../controllers/Auth/register';
 
 import type { IReply } from '$lib/shared/interfaces';
 import type { FastifyInstance, RegisterOptions } from 'fastify';
