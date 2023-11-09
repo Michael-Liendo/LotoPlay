@@ -1,6 +1,7 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
 
+import cors from '@fastify/cors';
 import Fastify from 'fastify';
 
 import database from './repository/database';
@@ -8,6 +9,11 @@ import routes from './routes';
 
 // Instantiate Fastify with some config
 const fastify = Fastify();
+
+// Cors
+fastify.register(cors, {
+  origin: '*',
+});
 
 // Declare a route
 fastify.register(routes, {

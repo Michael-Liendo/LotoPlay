@@ -1,5 +1,5 @@
 export interface IReply {
-  200: {
+  '2xx': {
     message: string;
     data: unknown;
   };
@@ -11,5 +11,6 @@ export interface IReply {
   };
   500: {
     message: string;
+    error: string;
   };
 }

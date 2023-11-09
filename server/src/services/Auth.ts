@@ -1,13 +1,35 @@
-import { ILoggedInUser, IUserForLogin } from '$lib/shared/interfaces';
+import { User } from '../repository/User';
+import { CustomError } from '../utils/Error';
+import { hashPassword } from '../utils/password';
+
+import type { IUserForLogin, IUserForRegister } from '$lib/shared/interfaces';
 
 export default class Auth {
-  static async login(data: IUserForLogin): Promise<ILoggedInUser | Error> {
-    try {
-      const { email, password } = data;
-      // TODO: Implement login logic with repository
-      return { token: 'hello', user: { email, password } };
-    } catch (error) {
-      return error as Error;
+  // biome-ignore lint/correctness/noUnusedVariables: todo: remove this
+  static async login(data: IUserForLogin) {
+    //  todo: implement login
+  }
+
+  static async register(data: IUserForRegister) {
+    const { first_name, last_name, email, password } = data;
+
+    const user = await User.getUserByEmail(email);
+
+    if (user) {
+      throw new CustomError(400, 'User already exists');
     }
+
+    const hashedPassword = await hashPassword(password);
+
+    const registeredUser = {
+      first_name,
+      last_name,
+      email,
+      password: hashedPassword,
+    };
+
+    const id = await User.createUser(registeredUser);
+
+    return id;
   }
 }
