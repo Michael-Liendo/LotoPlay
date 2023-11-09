@@ -1,6 +1,9 @@
+import * as dotenv from 'dotenv';
 import Fastify from 'fastify';
 
 import type { IUser } from '$lib/shared';
+
+dotenv.config();
 
 const fastify = Fastify({
   logger: true,
