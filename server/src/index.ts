@@ -2,14 +2,16 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 import Fastify from 'fastify';
+
 import database from './repository/database';
+import routes from './routes';
 
 // Instantiate Fastify with some config
 const fastify = Fastify();
 
 // Declare a route
-fastify.get('/', async () => {
-  return { hello: 'world' };
+fastify.register(routes, {
+  prefix: '/api',
 });
 
 // check database connection
