@@ -13,7 +13,6 @@
     "lint": "biome format ./src && biome check ./src",
     "format": "biome format --write ./src && biome check --apply ./src",
     "format:unsafe": "biome format --write ./src && biome check --apply-unsafe ./src"
-
   },
   "repository": {
     "type": "git",
