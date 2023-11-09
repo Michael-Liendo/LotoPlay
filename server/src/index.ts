@@ -1,4 +1,7 @@
 import Fastify from 'fastify';
+
+import type { IUser } from '$lib/shared';
+
 const fastify = Fastify({
   logger: true,
 });
@@ -7,6 +10,17 @@ const fastify = Fastify({
 fastify.get('/', async (request, reply) => {
   return { hello: 'world' };
 });
+
+const user: IUser = {
+  id: 1,
+  name: 'John Doe',
+  email: '',
+  password: '',
+  createdAt: new Date(),
+  updatedAt: new Date(),
+};
+
+console.log(user);
 
 /**
  * Run the server!
@@ -19,4 +33,5 @@ const start = async () => {
     process.exit(1);
   }
 };
+
 start();
