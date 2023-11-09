@@ -1,6 +1,6 @@
 import knex from 'knex';
 
-const db = knex({
+const database = knex({
   client: 'pg',
   connection: {
     host: process.env.POSTGRES_HOST,
@@ -14,4 +14,4 @@ const db = knex({
   },
 });
 
-export default db;
+export default database;
