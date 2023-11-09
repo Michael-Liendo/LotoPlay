@@ -5,9 +5,7 @@ import Fastify from 'fastify';
 import database from './repository/database';
 
 // Instantiate Fastify with some config
-const fastify = Fastify({
-  logger: true,
-});
+const fastify = Fastify();
 
 // Declare a route
 fastify.get('/', async () => {
