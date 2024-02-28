@@ -30,9 +30,9 @@ import '@ionic/react/css/text-transformation.css';
 /* Theme variables */
 import './theme/variables.css';
 
+import { Routes } from './Routes';
 /* Tailwind CSS */
 import './theme/tailwind.css';
-import { Routes } from './Routes';
 
 setupIonicReact();
 

@@ -23,9 +23,9 @@ export function Routes() {
   );
 }
 
-const PrivateRoutes: JSX.Element[] = [];
+const _PrivateRoutes: JSX.Element[] = [];
 
-const AuthRoutes: JSX.Element[] = [];
+const _AuthRoutes: JSX.Element[] = [];
 
 const PublicRoutes = [
   <Route path={PublicRoutesEnum.Home} component={Tab1} exact />,
