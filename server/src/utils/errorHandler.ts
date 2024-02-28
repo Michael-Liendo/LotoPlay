@@ -9,6 +9,7 @@ export abstract class ErrorWithDetails extends Error {
 
 export class BadRequestError extends ErrorWithDetails {
   statusCode = StatusCodes.BAD_REQUEST;
+  details = 'You need add';
 }
 export class ConflictError extends ErrorWithDetails {
   statusCode = StatusCodes.CONFLICT;

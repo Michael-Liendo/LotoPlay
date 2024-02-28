@@ -4,13 +4,11 @@ export interface IReply {
     data: unknown;
   };
   400: {
-    message: string;
-  };
-  '4xx': {
+    error: string;
     message: string;
   };
   500: {
-    message: string;
     error: string;
+    message: string;
   };
 }
