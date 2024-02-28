@@ -2,8 +2,8 @@ import validator from 'validator';
 
 import Auth from '../../services/Auth';
 
-import { BadRequestError } from '../../utils/errorHandler';
 import { Reply, Request } from '../../types';
+import { BadRequestError } from '../../utils/errorHandler';
 
 import type { IUserForRegister } from '$lib/shared';
 

@@ -18,7 +18,7 @@ export class Jwt {
     try {
       const userToken = jwt.verify(token, process.env.JWT_PRIVATE_KEY);
       return userToken;
-    } catch (error) {
+    } catch (_error) {
       throw new UnauthorizedError('INVALID_TOKEN');
     }
   }
