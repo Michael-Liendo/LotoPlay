@@ -8,6 +8,17 @@ export class User {
   }
 
   /**
+   *  getUserByID - get a user with the ID
+   * @param id string
+   * @returns string IUser
+   */
+  static async getUserByID(id: string): Promise<IUser | null> {
+    const user = await database('users').where({ id }).first();
+
+    return user;
+  }
+
+  /**
    *  createUser - creates a user and returns the id
    * @param user IUserForRegister
    * @returns string id
