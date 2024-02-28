@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    // "outDir": "../../dist/out-tsc",
+    "declaration": true,
+    "module": "commonjs",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "types": [
+      "node"
+    ]
+  },
+  "files": [],
+  "include": [
+    "src/**/*.ts"
+  ],
+}
