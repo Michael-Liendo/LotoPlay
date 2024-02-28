@@ -34,6 +34,7 @@ import './theme/variables.css';
 
 /* Tailwind CSS */
 import './theme/tailwind.css';
+import { Routes } from './Routes';
 
 setupIonicReact();
 
@@ -42,12 +43,10 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/tab1">
-            <Tab1 />
-          </Route>
+          <Routes />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
+          <IonTabButton tab="tab1" href="/home">
             <IonIcon aria-hidden="true" icon={triangle} />
             <IonLabel>Tab 1</IonLabel>
           </IonTabButton>
