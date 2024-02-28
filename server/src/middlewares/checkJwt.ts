@@ -16,7 +16,7 @@ async function checkJwt(request: Request) {
   const token = request.headers.authorization;
 
   if (!token) {
-    throw new UnauthorizedError('Access denied -Jwt is required');
+    throw new UnauthorizedError('Access denied Jwt is required');
   }
 
   try {

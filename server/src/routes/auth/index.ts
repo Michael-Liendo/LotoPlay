@@ -14,6 +14,8 @@ export default function auth(
   _: RegisterOptions,
   done: DoneFuncWithErrOrRes,
 ) {
+  fastify.register(checkJwt);
+
   fastify.post<{ Reply: IReply }>('/login', login);
   fastify.post<{ Reply: IReply }>('/register', register);
 

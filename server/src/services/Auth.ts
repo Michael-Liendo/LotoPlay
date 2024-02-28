@@ -1,8 +1,8 @@
 import { User } from '../repository/User';
-import { CustomError } from '../utils/Error';
 import { hashPassword } from '../utils/password';
 
 import type { IUserForLogin, IUserForRegister } from '$lib/shared/interfaces';
+import { BadRequestError } from '../utils/errorHandler';
 
 export default class Auth {
   // biome-ignore lint/correctness/noUnusedVariables: todo: remove this
@@ -16,7 +16,7 @@ export default class Auth {
     const user = await User.getUserByEmail(email);
 
     if (user) {
-      throw new CustomError(400, 'User already exists');
+      throw new BadRequestError('Select another email');
     }
 
     const hashedPassword = await hashPassword(password);
