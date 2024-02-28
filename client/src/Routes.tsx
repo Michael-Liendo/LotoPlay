@@ -1,4 +1,4 @@
-import { IonRedirect, IonRouterOutlet } from '@ionic/react';
+import { IonRouterOutlet } from '@ionic/react';
 import { Route } from 'react-router';
 import Tab1 from './pages/Tab1';
 

@@ -10,8 +10,6 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { triangle } from 'ionicons/icons';
-import { Route } from 'react-router-dom';
-import Tab1 from './pages/Tab1';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
